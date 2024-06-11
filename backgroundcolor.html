@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backgroundcolor</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            height: 100px;
+            width: 100px;
+            border: 2px solid rgb(249, 246, 246);
+            display: inline-flex;           
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+
+        }
+        h1{
+            color: white;
+          text-align: center;
+        }
+        .button_container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90%;
+        }
+       @media (max-width:600px) 
+       {
+       .button{
+        height: 60px;
+        width: 60px;
+       }
+        h1{
+            font-size: 1.5rem;
+        }
+      
+
+       }
+       @media (max-width:400px) {
+        .button{
+            height: 40px;
+            width: 40px;
+
+        }
+        h1{
+            font-size: 1.2rem;
+        }
+       }
+    </style>
+</head>
+
+<body>
+    <h1>select background according to your color</h1>
+    <div class="button_container">
+    <div class="button" id="grey" style="background-color: grey;"></div>
+    <div class="button" id="green" style="background-color: green;"></div>
+    <div class="button" id="yellow" style="background-color: yellow;"></div>
+    <div class="button" id="orange" style="background-color: orange;"></div>
+</div>
+    <script>
+        const buttons = document.querySelectorAll(".button")
+        const body = document.querySelector("body")
+        const h1 =document.querySelector("h1")
+        buttons.forEach(function(button){
+            console.log(button)
+            button.addEventListener('click', function(e){
+                console.log(e)
+                console.log(e.target)
+                if(e.target.id==="grey"){
+                    body.style.backgroundColor=e.target.id;
+                }
+                else if (e.target.id==="green"){
+                    body.style.backgroundColor=e.target.id;
+                }
+                else if (e.target.id==="yellow"){
+                    body.style.backgroundColor=e.target.id;
+                }
+                else if (e.target.id==="orange"){
+                    body.style.backgroundColor=e.target.id;
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>
